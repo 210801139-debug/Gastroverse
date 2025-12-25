@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Food - GastroVerse</title>
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Add Food Item</h1>
+      <nav>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="add-food.html">Add Food</a>
+        <a href="manage-food.html">Manage Food</a>
+        <a href="../index.html">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <form id="addFoodForm">
+        <input type="text" id="foodName" placeholder="Food Name" required />
+        <select id="cuisine" required>
+          <option value="">Select Cuisine</option>
+          <option value="indian">Indian</option>
+          <option value="south-indian">South Indian</option>
+          <option value="american">American</option>
+          <option value="desserts">Desserts</option>
+        </select>
+        <input type="number" id="price" placeholder="Price" required />
+        <textarea
+          id="description"
+          placeholder="Description"
+          required
+        ></textarea>
+        <input type="text" id="imageUrl" placeholder="Image URL" required />
+        <button type="submit">Add Food Item</button>
+      </form>
+    </main>
+    <script src="../utils/constants.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - GastroVerse</title>
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/user.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Shopping Cart</h1>
+      <nav>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        <a href="orders.html">My Orders</a>
+        <a href="../index.html">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <div id="cartItems">
+        <!-- Cart items will be dynamically loaded here -->
+      </div>
+      <div class="cart-summary">
+        <h3>Total: $<span id="cartTotal">0</span></h3>
+        <button id="checkoutBtn" onclick="proceedToCheckout()">
+          Proceed to Checkout
+        </button>
+      </div>
+    </main>
+    <script src="../utils/constants.js"></script>
+    <script src="../utils/helpers.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="user.js"></script>
+  </body>
+</html>
