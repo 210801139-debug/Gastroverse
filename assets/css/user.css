@@ -23,6 +23,15 @@
   margin-top: 2rem;
 }
 
+.cart-main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
 .cart-item {
   display: flex;
   align-items: center;
@@ -71,14 +80,21 @@
   font-size: 1.1rem;
 }
 
+.order-main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .order-type-selection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: 2rem 0;
 }
 
 .order-type-card {
+  height: 200px;
+  width: 350px;
   background: white;
   padding: 2rem;
   border-radius: 10px;

@@ -87,4 +87,5 @@ function clearCart() {
 // Initialize cart count on page load
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
+  
 });
