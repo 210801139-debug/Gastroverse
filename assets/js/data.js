@@ -5,40 +5,41 @@ function initializeSampleData() {
   const foods = JSON.parse(localStorage.getItem("foods"));
 
   if (!foods || foods.length === 0) {
-    const sampleFoods = [
-      {
-        id: 1,
-        name: "Butter Chicken",
-        cuisine: "indian",
-        price: 12.99,
-        description: "Creamy tomato-based curry with tender chicken pieces",
-        imageUrl: "assets/images/foods/indian/butter-chicken.jpg",
-      },
-      {
-        id: 2,
-        name: "Masala Dosa",
-        cuisine: "south-indian",
-        price: 8.99,
-        description: "Crispy rice crepe filled with spiced potato masala",
-        imageUrl: "assets/images/foods/south-indian/masala-dosa.jpg",
-      },
-      {
-        id: 3,
-        name: "Classic Burger",
-        cuisine: "american",
-        price: 10.99,
-        description: "Juicy beef patty with lettuce, tomato, and cheese",
-        imageUrl: "assets/images/foods/american/burger.jpg",
-      },
-      {
-        id: 4,
-        name: "Chocolate Brownie",
-        cuisine: "desserts",
-        price: 5.99,
-        description: "Rich and fudgy chocolate brownie with vanilla ice cream",
-        imageUrl: "assets/images/foods/desserts/brownie.jpg",
-      },
-    ];
+    const sampleFoods = fetch("../db.json");
+    // const sampleFoods = [
+    //   {
+    //     id: 1,
+    //     name: "Butter Chicken",
+    //     cuisine: "indian",
+    //     price: 12.99,
+    //     description: "Creamy tomato-based curry with tender chicken pieces",
+    //     imageUrl: "assets/images/foods/indian/butter-chicken.jpg",
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Masala Dosa",
+    //     cuisine: "south-indian",
+    //     price: 8.99,
+    //     description: "Crispy rice crepe filled with spiced potato masala",
+    //     imageUrl: "assets/images/foods/south-indian/masala-dosa.jpg",
+    //   },
+    //   {
+    //     id: 3,
+    //     name: "Classic Burger",
+    //     cuisine: "american",
+    //     price: 10.99,
+    //     description: "Juicy beef patty with lettuce, tomato, and cheese",
+    //     imageUrl: "assets/images/foods/american/burger.jpg",
+    //   },
+    //   {
+    //     id: 4,
+    //     name: "Chocolate Brownie",
+    //     cuisine: "desserts",
+    //     price: 5.99,
+    //     description: "Rich and fudgy chocolate brownie with vanilla ice cream",
+    //     imageUrl: "assets/images/foods/desserts/brownie.jpg",
+    //   },
+    // ];
 
     localStorage.setItem("foods", JSON.stringify(sampleFoods));
   }
