@@ -19,7 +19,7 @@ function loadMenuItems(filter = "all") {
                 <img src="${food.imageUrl}" alt="${food.name}">
                 <h3>${food.name}</h3>
                 <p>${food.cuisine}</p>
-                <p class="price">$${food.price}</p>
+                <p class="price">₹${food.price}</p>
                 <button onclick="addToCart(${food.id})">Add to Cart</button>
             `;
       menuItems.appendChild(foodCard);
