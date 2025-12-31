@@ -19,7 +19,7 @@ function loadMenuItems(filter = "all") {
                 <img src="${food.imageUrl}" alt="${food.name}">
                 <h3>${food.name}</h3>
                 <p>${food.cuisine}</p>
-                <p class="price">$${food.price}</p>
+                <p class="price">₹${food.price}</p>
                 <button onclick="addToCart(${food.id})">Add to Cart</button>
             `;
       menuItems.appendChild(foodCard);
@@ -75,11 +75,20 @@ function loadCartItems() {
       cartItem.innerHTML = `
                 <img src="${item.imageUrl}" alt="${item.name}">
                 <div class="cart-item-details">
-                    <h3>${item.name}</h3>
-                    <p>$${item.price} x ${item.quantity} = $${itemTotal.toFixed(
-        2
-      )}</p>
+                    <h3>Item Name : ${item.name}</h3>
+                    <p>Cost Per Piece: ₹${item.price} </p>
+                    <p>Quantity: ${item.quantity} </p>
+                    <p>Total: ₹${itemTotal.toFixed(2)}</p>
                 </div>
+                <div class="qty-controls">
+                      <button onclick="updateCartItemQuantity(${
+                        item.id
+                      }, -1)">-</button>
+                      <span>${item.quantity}</span>
+                      <button onclick="updateCartItemQuantity(${
+                        item.id
+                      }, 1)">+</button>
+                    </div>
                 <button onclick="removeFromCart(${item.id})">Remove</button>
             `;
       cartItems.appendChild(cartItem);
@@ -170,13 +179,27 @@ function loadOrders() {
                 <h3>Order #${order.id}</h3>
                 <p>Date: ${order.date}</p>
                 <p>Type: ${order.orderType}</p>
-                <p>Total: $${order.total.toFixed(2)}</p>
+                <p>Total: ₹${order.total.toFixed(2)}</p>
                 <p>Status: ${order.status}</p>
                 ${order.address ? `<p>Address: ${order.address}</p>` : ""}
             `;
       ordersList.appendChild(orderCard);
     });
   }
+}
+
+// Adjust quantity (delta = +1 or -1)
+function updateCartItemQuantity(foodId, delta) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart = cart
+    .map((item) =>
+      item.id === foodId ? { ...item, quantity: item.quantity + delta } : item
+    )
+    .filter((item) => item.quantity > 0); // drop items at 0 or less
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCartItems();
+  updateCartCount();
 }
 
 // Initialize

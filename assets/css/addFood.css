@@ -1,0 +1,96 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url("../images/registerLoginBackgroundImage.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../images/registerLoginBackgroundImage.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+}
+
+.addFood-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addFood-header h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.addFood-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select,
+form button {
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  outline: none;
+}
+
+form textarea {
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+form button {
+  background-image: linear-gradient(135deg, rgb(247, 160, 0), rgb(253, 68, 68));
+  color: white;
+  cursor: pointer;
+  transition: background-image 0.3s;
+}
+
+form button:hover {
+  background-image: linear-gradient(135deg, rgb(253, 68, 68), rgb(247, 160, 0));
+}
+
+form input::placeholder,
+form select::placeholder {
+  color: #ccc;
+}
+
+form label {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+nav a:hover {
+  text-decoration: underline;
+}

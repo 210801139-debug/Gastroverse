@@ -39,8 +39,31 @@ function createOrder(orderType, address = null) {
   orders.push(order);
   saveOrders(orders);
 
+  // Reduce quantities in localStorage
+  reduceInventoryQuantities(cart);
+
   clearCart();
   return true;
+}
+
+// Reduce food quantities based on order items
+function reduceInventoryQuantities(cartItems) {
+  let foods = JSON.parse(localStorage.getItem("foods")) || {};
+
+  // Update quantities for each item in the order
+  cartItems.forEach((cartItem) => {
+    Object.keys(foods).forEach((cuisine) => {
+      foods[cuisine] = foods[cuisine].map((food) => {
+        if (food.id === cartItem.id) {
+          food.quantity = Math.max(0, food.quantity - cartItem.quantity);
+        }
+        return food;
+      });
+    });
+  });
+
+  localStorage.setItem("foods", JSON.stringify(foods));
+  console.log("Inventory updated in localStorage:", foods);
 }
 
 // Get user orders

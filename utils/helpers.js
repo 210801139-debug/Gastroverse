@@ -2,7 +2,7 @@
 
 // Format price with currency symbol
 function formatPrice(price) {
-  return `${CURRENCY_SYMBOL}${parseFloat(price).toFixed(2)}`;
+  return `₹${parseFloat(price).toFixed(2)}`;
 }
 
 // Format date
